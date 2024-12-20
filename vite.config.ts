@@ -7,7 +7,7 @@ export default defineConfig({
     lib: {
       entry: "./src/index.tsx", // Path to your entry file
       name: "DissolveEffect", // Global name for UMD build
-      fileName: (format) => `dissolver.${format}.js`, // Output file name
+      fileName: (format) => `dissolveit.${format}.js`, // Output file name
     },
     rollupOptions: {
       external: [

@@ -5,7 +5,7 @@ A customizable dissolve effect component for React Three Fiber applications, fea
 ## Installation
 
 ```bash
-npm install dissolver
+npm install dissolveit
 ```
 
 ## Features
@@ -33,27 +33,54 @@ This package requires the following peer dependencies:
 ## Basic Usage
 
 ```jsx
+import { useState } from "react";
+import "./App.css";
 import { Canvas } from "@react-three/fiber";
-import { DissolveEffect } from "dissolver";
+import { DissolveEffect } from "dissolveit";
+import { OrbitControls } from "@react-three/drei";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { Environment } from "@react-three/drei";
 
 function App() {
   const [isFading, setIsFading] = useState(true);
 
   return (
-    <Canvas>
-      <mesh>
-        <boxGeometry args={[1, 1, 1]} />
-        <DissolveEffect
-          fadeIn={isFading}
-          fadeOut={!isFading}
-          color="#FFD700"
-          thickness={0.1}
-          intensity={10}
-        />
-      </mesh>
-    </Canvas>
+    <div className="app">
+      <Canvas camera={{ position: [3, 3, 5], fov: 42 }}>
+        <color attach="background" args={["#ececec"]} />
+        <OrbitControls />
+        <ambientLight />
+        {/* <spotLight position={[10, 10, 10]} /> */}
+        <Environment preset="sunset" />
+        <EffectComposer>
+          <Bloom luminanceThreshold={2} intensity={1.25} mipmapBlur />
+        </EffectComposer>
+
+        <mesh position={[0, 0, 0]}>
+          <boxGeometry args={[1, 1, 1]} />
+          <DissolveEffect
+            fadeIn={isFading}
+            fadeOut={!isFading}
+            color="#FFD700"
+            thickness={0.1}
+            intensity={10}
+          />
+        </mesh>
+      </Canvas>
+      <button
+        style={{ position: "absolute", bottom: 20, left: 20 }}
+        onClick={() => {
+          setIsFading(!isFading);
+          console.log("Is Fading:", !isFading);
+        }}
+      >
+        Toggle Fade
+      </button>
+    </div>
   );
 }
+
+export default App;
 ```
 
 ## Props
