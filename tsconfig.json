@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["react", "react-dom", "@react-three/fiber"],
+    "declaration": false, // Enable generation of declaration files
+    "module": "ESNext", // Module system for code generation
+    "target": "ES2020", // Target ECMAScript version
+    "strict": true, // Strict type-checking options
+    "esModuleInterop": true, // Ensures compatibility with CommonJS modules
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "moduleResolution": "bundler", // Resolve modules using bundler logic
+    "isolatedModules": true, // Ensures each file is treated as an isolated module
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "noEmitOnError": true // Prevent output if there are errors
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
