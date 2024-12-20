@@ -39,5 +39,14 @@
     "globals": "^15.13.0",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rohan-Raidani/Dissolver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rohan-Raidani/Dissolver/issues"
+  },
+  "homepage": "https://github.com/Rohan-Raidani/Dissolver#readme",
+  "license": "MIT"
 }
