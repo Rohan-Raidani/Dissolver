@@ -135,4 +135,4 @@ Built with [React Three Fiber](https://github.com/pmndrs/react-three-fiber) and 
 
 ## Support
 
-For issues and feature requests, please use the [GitHub issue tracker](https://github.com/Rohan-Raidani/Dissolver.git/issues).
+For issues and feature requests, please use the [GitHub issue tracker](https://github.com/Rohan-Raidani/Dissolver/issues).
